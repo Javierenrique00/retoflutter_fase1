@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../domain/models/product.dart';
 import '../../navigation/navigation.dart';
+import '../common/color_app.dart';
 import 'product_detail_card_view.dart';
 
 class DetailScreenView extends StatelessWidget {
@@ -12,8 +13,8 @@ class DetailScreenView extends StatelessWidget {
     final product = ModalRoute.of(context)!.settings.arguments as Product;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalle del producto: ${product.name}'),
-        backgroundColor: Colors.amber,
+        title: Text('Detalle del producto'),
+        backgroundColor: ColorApp.AppBarrBackground,
       ),
       body: ProductDetailCardView(product: product,),
     );

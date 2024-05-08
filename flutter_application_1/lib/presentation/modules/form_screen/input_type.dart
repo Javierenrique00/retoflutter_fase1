@@ -1,2 +1,2 @@
 
-enum InputType {stringType, doubleType, intType }
+enum InputType {stringShortType,stringLongType , doubleType, intType }

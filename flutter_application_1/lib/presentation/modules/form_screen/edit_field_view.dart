@@ -24,6 +24,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topCenter,
       padding: EdgeInsets.all(10),
       child: SizedBox(
         width: 300,
@@ -44,22 +45,35 @@ class _EditFieldRowState extends State<EditFieldRow> {
   }
 
   List<TextInputFormatter> getInputFormater(InputType type) => switch(type){
-    InputType.stringType => [FilteringTextInputFormatter.singleLineFormatter ],
+    InputType.stringShortType || InputType.stringLongType  => [FilteringTextInputFormatter.singleLineFormatter ],
     InputType.doubleType => [FilteringTextInputFormatter.allow((RegExp("[.0-9]"))) ],
     InputType.intType => [FilteringTextInputFormatter.allow((RegExp("[0-9]"))) ],
     _ => [FilteringTextInputFormatter.singleLineFormatter ]
   };
 
   String? validate(String? value,InputType type) => switch(type){
-    InputType.stringType => checkString(value,type),
+    InputType.stringShortType => checkStringShort(value,type),
+    InputType.stringLongType => checkStringLong(value,type),
     InputType.doubleType => checkDouble(value, type),
     InputType.intType => checkInt(value, type),
     _ => null
   };
 
-  String? checkString(String? value,InputType type){
+  String? checkStringShort(String? value,InputType type){
     if(value == null || value!.isEmpty ){
       return "Entre un valor";
+    }else if(value!.length > 15){
+      return "Debe tener máximo 15 caracteres";
+    }else{
+      return null;
+    }
+  }
+
+    String? checkStringLong(String? value,InputType type){
+    if(value == null || value!.isEmpty ){
+      return "Entre un valor";
+    }else if(value!.length > 100){
+      return "Debe tener máximo 100 caracteres";
     }else{
       return null;
     }
@@ -69,7 +83,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
     if(value == null || value!.isEmpty){
       return "Entre un valor";
     }else if(value!.length > 10){
-        return "Cantidad con muchos dígitos";
+        return "Debe tener máximo 10 dígitos";
     }else{
       try{
         double.parse(value!);
@@ -84,7 +98,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
     if(value == null || value!.isEmpty){
       return "Entre un valor";
     }else if(value!.length > 10){
-      return "Cantidad con muchos dígitos";
+      return "Debe tener máximo 10 dígitos";
     }else{
       try{
         int.parse(value!);

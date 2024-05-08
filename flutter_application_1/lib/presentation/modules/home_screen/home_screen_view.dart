@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../navigation/navigation.dart';
+import '../common/color_app.dart';
 import 'list_product_view.dart';
 
 class HomeScreenView extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomeScreenView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Listado de productos'),
-        backgroundColor: Colors.amber,
+        backgroundColor: ColorApp.AppBarrBackground,
       ),
       body: ListProductsView(),
       floatingActionButton: FloatingActionButton(

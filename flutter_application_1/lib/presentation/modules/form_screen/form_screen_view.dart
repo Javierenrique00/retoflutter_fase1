@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../domain/models/product.dart';
+import '../common/color_app.dart';
 import 'form_detail_view.dart';
 
 class FormScreenView extends StatefulWidget {
@@ -19,8 +20,8 @@ class _FormScreenViewState extends State<FormScreenView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('-Edición del producto- ${product.id}'),
-        backgroundColor: Colors.amber,
+        title: Text('Edición de producto'),
+        backgroundColor: ColorApp.AppBarrBackground,
       ),
       body: FormDetailView(product: product,),
 

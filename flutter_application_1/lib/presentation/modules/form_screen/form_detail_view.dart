@@ -39,12 +39,14 @@ _FormDetailViewState({required this.product}){
           key: _formKey,
           child: Column(
           children: [
-            EditFieldRow(name: "Nombre:", strValue: product.name,type: InputType.stringType ,onButtonPressed: (String value){ _name = value;}, ),
-            EditFieldRow(name: "Descripción:", strValue: product.description,type: InputType.stringType ,onButtonPressed: (String value){ _description = value;}, ),
+            EditFieldRow(name: "Nombre:", strValue: product.name,type: InputType.stringShortType ,onButtonPressed: (String value){ _name = value;}, ),
+            EditFieldRow(name: "Descripción:", strValue: product.description,type: InputType.stringLongType ,onButtonPressed: (String value){ _description = value;}, ),
             EditFieldRow(name: "Precio:", strValue: product.price.toString(),type: InputType.doubleType ,onButtonPressed: (String value){ _price = double.parse(value);}, ),
             EditFieldRow(name: "Cantidad:", strValue: product.qty.toString(),type: InputType.intType ,onButtonPressed: (String value){ _qty = int.parse(value);}, ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            SizedBox(
+              width: 200,
+              child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
               TextButton(onPressed: (){
                 if(_formKey.currentState!.validate()){
@@ -57,6 +59,7 @@ _FormDetailViewState({required this.product}){
                 Navigator.popUntil(context, (route) => route.isFirst);
               } , child: Text('Eliminar'))
             ],),
+            ),
           ]
         ),);
       });
