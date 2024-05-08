@@ -4,6 +4,6 @@ import 'package:flutter/material.dart';
 class ColorApp {
   ColorApp._();
 
-  static const AppBarrBackground = Colors.blueGrey;
+  static const appBarrBackground = Colors.blueGrey;
 
 }

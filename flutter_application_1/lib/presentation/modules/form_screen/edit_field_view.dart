@@ -12,13 +12,12 @@ class EditFieldRow extends StatefulWidget {
   final InputType type;
   
   @override
-  State<EditFieldRow> createState() => _EditFieldRowState(name: name,strValue: strValue,);
+  State<EditFieldRow> createState() => _EditFieldRowState();
 }
 
 class _EditFieldRowState extends State<EditFieldRow> {
-  _EditFieldRowState({required this.name,required this.strValue});
-  final String name;
-  String strValue;
+  _EditFieldRowState();
+
 
 
   @override
@@ -29,7 +28,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
       child: SizedBox(
         width: 300,
         child: TextFormField(
-          initialValue: strValue,
+          initialValue: widget.strValue,
           validator:(value) => validate(value,widget.type),
           onChanged: (String value)=> widget.onButtonPressed(value),
           obscureText: false,
@@ -37,7 +36,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
           inputFormatters: getInputFormater(widget.type), 
           decoration: InputDecoration(
             border: const OutlineInputBorder(),
-            labelText: name,
+            labelText: widget.name,
           ),
         ),
       ),

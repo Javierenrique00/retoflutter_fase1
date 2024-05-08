@@ -13,7 +13,7 @@ class DetailScreenView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalle del producto'),
-        backgroundColor: ColorApp.AppBarrBackground,
+        backgroundColor: ColorApp.appBarrBackground,
       ),
       body: ProductDetailCardView(product: product,),
     );

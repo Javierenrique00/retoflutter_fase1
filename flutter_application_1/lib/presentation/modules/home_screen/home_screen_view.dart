@@ -12,7 +12,7 @@ class HomeScreenView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Listado de productos'),
-        backgroundColor: ColorApp.AppBarrBackground,
+        backgroundColor: ColorApp.appBarrBackground,
       ),
       body: const ListProductsView(),
       floatingActionButton: FloatingActionButton(

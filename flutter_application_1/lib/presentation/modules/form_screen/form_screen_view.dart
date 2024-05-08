@@ -20,8 +20,8 @@ class _FormScreenViewState extends State<FormScreenView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edición de producto'),
-        backgroundColor: ColorApp.AppBarrBackground,
+        title: const Text('Edición de producto'),
+        backgroundColor: ColorApp.appBarrBackground,
       ),
       body: FormDetailView(product: product,),
 

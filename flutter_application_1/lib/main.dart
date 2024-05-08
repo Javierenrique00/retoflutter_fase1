@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         create: (context) => AppViewModel(
             repository: ProductRepositoryImpl(
                 datasource: LocalProductDatasourceImpl())),
-      child: AppGlobalState(),
+      child: const AppGlobalState(),
       );
   }
 }

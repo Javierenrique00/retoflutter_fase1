@@ -14,7 +14,7 @@ class ProductDetailCardView extends StatelessWidget {
     return Center(
       child: Card(
         child: Container(
-          margin: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(20),
           width: 300,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -22,9 +22,9 @@ class ProductDetailCardView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DetailItem(title: 'Id: ', content: '${product.id}'),
-              DetailItem(title: 'Nombre: ', content: '${product.name}'),
-              DetailItem(title: 'Descripción: ', content: '${product.description}'),
-              DetailItem(title: 'Precio: ', content: '${Utils.convCurrency(product.price)}'),
+              DetailItem(title: 'Nombre: ', content: product.name),
+              DetailItem(title: 'Descripción: ', content: product.description),
+              DetailItem(title: 'Precio: ', content: Utils.convCurrency(product.price)),
               DetailItem(title: 'Cantidad: ', content: '${product.qty}'),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +33,7 @@ class ProductDetailCardView extends StatelessWidget {
                       onPressed: () => Navigator.pushNamed(
                           context, Navigation.formScreen,
                           arguments: product),
-                      child: Text('Edit'))
+                      child: const Text('Edit'))
                 ],
               ),
             ],
