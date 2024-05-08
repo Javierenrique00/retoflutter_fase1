@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../domain/models/product.dart';
-import '../../navigation/navigation.dart';
 import '../../../domain/viewmodels/app_viewmodel.dart';
 import 'edit_field_view.dart';
 import 'input_type.dart';
@@ -25,12 +24,11 @@ late double _price;
 late int _qty;
 
 _FormDetailViewState({required this.product}){
-    this._name = product.name;
-    this._description = product.description;
-    this._price = product.price;
-    this._qty = product.qty;
+    _name = product.name;
+    _description = product.description;
+    _price = product.price;
+    _qty = product.qty;
 }
-
 
   @override
   Widget build(BuildContext context) {

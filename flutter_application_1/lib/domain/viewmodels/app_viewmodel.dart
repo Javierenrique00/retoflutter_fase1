@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../../data/repository/product_repository.dart';
 import '../models/product.dart';
@@ -9,7 +8,7 @@ class AppViewModel extends ChangeNotifier {
   AppViewModel({required this.repository});
 
   final ProductRepository repository;
-  List<Product> _products = [];
+  final List<Product> _products = [];
   
   void getAllProductsFromRepository(){
     _products.clear();
@@ -41,8 +40,4 @@ class AppViewModel extends ChangeNotifier {
     }
 
   }
-
-
-
-
 }

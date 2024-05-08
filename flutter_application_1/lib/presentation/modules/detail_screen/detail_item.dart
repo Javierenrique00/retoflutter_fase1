@@ -11,10 +11,10 @@ class DetailItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${title}',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        Expanded(child: Text('${content}')),
+        Expanded(child: Text(content)),
       ],
     );
   }

@@ -14,7 +14,7 @@ class HomeScreenView extends StatelessWidget {
         title: const Text('Listado de productos'),
         backgroundColor: ColorApp.AppBarrBackground,
       ),
-      body: ListProductsView(),
+      body: const ListProductsView(),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           Navigator.pushNamed(context, Navigation.formScreen);

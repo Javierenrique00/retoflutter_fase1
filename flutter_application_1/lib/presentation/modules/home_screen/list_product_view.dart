@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:intl/intl.dart';
 
 import '../../navigation/navigation.dart';
 import '../common/utils.dart';
@@ -38,8 +37,8 @@ class _ListProductsViewState extends State<ListProductsView> {
           child: ListView.builder(
             itemCount: products.length,
             itemBuilder: (context, index) => ListTile(
-              title: Text('${products[index].name}'),
-              trailing: Text('${Utils.convCurrency(products[index].price)}'),
+              title: Text(products[index].name),
+              trailing: Text(Utils.convCurrency(products[index].price)),
               onTap: () => Navigator.pushNamed(context, Navigation.detailScreen,
                   arguments: products[index]),
             ),
