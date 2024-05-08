@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../../data/repository/product_repository.dart';
-import '../../../domain/models/product.dart';
+import '../../data/repository/product_repository.dart';
+import '../models/product.dart';
 
-class HomeScreenViewModel extends ChangeNotifier {
+class AppViewModel extends ChangeNotifier {
 
-  HomeScreenViewModel({required this.repository});
+  AppViewModel({required this.repository});
 
   final ProductRepository repository;
   List<Product> _products = [];

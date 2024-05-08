@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../domain/models/product.dart';
 import '../../navigation/navigation.dart';
-import '../home_screen/home_screen_viewmodel.dart';
+import '../../../domain/viewmodels/app_viewmodel.dart';
 import 'edit_field_view.dart';
 import 'input_type.dart';
 
@@ -34,7 +34,7 @@ _FormDetailViewState({required this.product}){
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeScreenViewModel>(builder: (context, viewModel, child) {
+    return Consumer<AppViewModel>(builder: (context, viewModel, child) {
         return Form(
           key: _formKey,
           child: Column(

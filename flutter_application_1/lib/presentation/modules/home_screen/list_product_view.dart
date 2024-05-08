@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../../navigation/navigation.dart';
 import '../common/utils.dart';
-import 'home_screen_viewmodel.dart';
+import '../../../domain/viewmodels/app_viewmodel.dart';
 
 class ListProductsView extends StatefulWidget {
   const ListProductsView({super.key});
@@ -27,7 +27,7 @@ class _ListProductsViewState extends State<ListProductsView> {
     return Container(
       alignment: Alignment.topCenter,
       child:
-          Consumer<HomeScreenViewModel>(builder: (context, viewModel, child) {
+          Consumer<AppViewModel>(builder: (context, viewModel, child) {
         if (!hasInit) {
           hasInit = true;
           viewModel.getAllProductsFromRepository();

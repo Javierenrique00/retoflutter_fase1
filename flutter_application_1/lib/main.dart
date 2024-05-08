@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'data/datasource/local/local_product_datasource_impl.dart';
 import 'data/repository/product_repository_impl.dart';
-import 'presentation/modules/home_screen/home_screen_viewmodel.dart';
+import 'domain/viewmodels/app_viewmodel.dart';
 import 'presentation/navigation/routes.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-        create: (context) => HomeScreenViewModel(
+        create: (context) => AppViewModel(
             repository: ProductRepositoryImpl(
                 datasource: LocalProductDatasourceImpl())),
       child: AppGlobalState(),

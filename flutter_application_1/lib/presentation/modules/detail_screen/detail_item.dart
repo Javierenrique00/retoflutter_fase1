@@ -8,9 +8,13 @@ class DetailItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('${title}',style: TextStyle(fontWeight: FontWeight.bold),),
-        Text('${content}'),
+        Text(
+          '${title}',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        Expanded(child: Text('${content}')),
       ],
     );
   }
