@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../navigation/navigation.dart';
 import 'home_screen_viewmodel.dart';
 import 'product_item_view.dart';
 
@@ -33,9 +34,10 @@ void initState() {
         final products = viewModel.getProducts();
         return ListView.builder(
           itemCount: products.length,
-          itemBuilder: (context, index) => Container(
-            height: 22,
-            child: ProductItemView(product: products[index]),
+          itemBuilder: (context, index) => ListTile(
+            title: Text('${products[index].name}'),
+            trailing: Text('${products[index].price}'),
+            onTap: () => Navigator.pushNamed(context, Navigation.detailScreen,arguments: products[index]),
           ),
         );
       }),
