@@ -33,7 +33,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
           validator:(value) => validate(value,widget.type),
           onChanged: (String value)=> widget.onButtonPressed(value),
           obscureText: false,
-          keyboardType: TextInputType.number,
+          keyboardType: getKeyboard(widget.type),
           inputFormatters: getInputFormater(widget.type), 
           decoration: InputDecoration(
             border: OutlineInputBorder(),
@@ -43,6 +43,12 @@ class _EditFieldRowState extends State<EditFieldRow> {
       ),
     );
   }
+
+  TextInputType getKeyboard(InputType type) => switch(type){
+    InputType.stringShortType || InputType.stringLongType  => TextInputType.text,
+    InputType.doubleType || InputType.intType  => TextInputType.number,
+    _ => TextInputType.text
+  };
 
   List<TextInputFormatter> getInputFormater(InputType type) => switch(type){
     InputType.stringShortType || InputType.stringLongType  => [FilteringTextInputFormatter.singleLineFormatter ],
