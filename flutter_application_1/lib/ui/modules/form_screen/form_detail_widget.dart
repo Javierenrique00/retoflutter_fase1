@@ -78,13 +78,15 @@ class _FormDetailWidgetState extends State<FormDetailWidget> {
               children: [
                 ElevatedButtonWidget(
                   onPressed: () {
-                    viewModel.setProduct(ProductModel(
+                    if(_formKey.currentState!.validate()){
+                        viewModel.setProduct(ProductModel(
                         id: widget.product.id,
                         name: _name,
                         description: _description,
                         price: _price,
                         qty: _qty));
                     Navigator.popUntil(context, (route) => route.isFirst);
+                    }
                   },
                 ),
               ],
