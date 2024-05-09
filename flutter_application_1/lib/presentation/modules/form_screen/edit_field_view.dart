@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'input_type.dart';
 
 class EditFieldRow extends StatefulWidget {
-  final Function (String) onButtonPressed;
+  final Function (String) onChanged;
 
-  const EditFieldRow({required this.name,required this.strValue,required this.type,required this.onButtonPressed, super.key});
+  const EditFieldRow({required this.name,required this.strValue,required this.type,required this.onChanged, super.key});
   final String name;
   final String strValue;
   final InputType type;
@@ -30,7 +30,7 @@ class _EditFieldRowState extends State<EditFieldRow> {
         child: TextFormField(
           initialValue: widget.strValue,
           validator:(value) => validate(value,widget.type),
-          onChanged: (String value)=> widget.onButtonPressed(value),
+          onChanged: (String value)=> widget.onChanged(value),
           obscureText: false,
           keyboardType: getKeyboard(widget.type),
           inputFormatters: getInputFormater(widget.type), 
