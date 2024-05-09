@@ -25,8 +25,7 @@ class _ListProductsWidgetState extends State<ListProductsWidget> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      child:
-          Consumer<AppViewModel>(builder: (context, viewModel, child) {
+      child: Consumer<AppViewModel>(builder: (context, viewModel, child) {
         if (!hasInit) {
           hasInit = true;
           viewModel.getAllProductsFromRepository();
@@ -36,11 +35,14 @@ class _ListProductsWidgetState extends State<ListProductsWidget> {
           width: 300,
           child: ListView.builder(
             itemCount: products.length,
-            itemBuilder: (context, index) => ListTile(
-              title: Text(products[index].name),
-              trailing: Text(Utils.convCurrency(products[index].price)),
-              onTap: () => Navigator.pushNamed(context, Navigation.detailScreen,
-                  arguments: products[index]),
+            itemBuilder: (context, index) => Card(
+              child: ListTile(
+                title: Text(products[index].name),
+                trailing: Text(Utils.convCurrency(products[index].price)),
+                onTap: () => Navigator.pushNamed(
+                    context, Navigation.detailScreen,
+                    arguments: products[index]),
+              ),
             ),
           ),
         );
