@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../navigation/navigation.dart';
 import '../common/utils.dart';
-import '../../../domain/viewmodels/app_viewmodel.dart';
+import '../../../domain/viewmodel/app_viewmodel.dart';
 
 class ListProductsWidget extends StatefulWidget {
   const ListProductsWidget({super.key});

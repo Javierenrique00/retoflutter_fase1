@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../domain/models/product_model.dart';
-import '../../../domain/viewmodels/app_viewmodel.dart';
+import '../../../domain/model/product_model.dart';
+import '../../../domain/viewmodel/app_viewmodel.dart';
 import 'edit_field_widget.dart';
 import 'input_type.dart';
 

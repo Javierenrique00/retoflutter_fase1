@@ -1,9 +1,9 @@
 
 
-import '../../../domain/models/product_model.dart';
-import 'local_product_datasource.dart';
+import '../../../domain/model/product_model.dart';
+import 'local_api.dart';
 
-class LocalProductDatasourceImpl implements LocalProductDatasource {
+class LocalApiImpl implements LocalApi {
 
   final _allProducts = [
       ProductModel(id: 1, name: 'Manzana', description: 'Manzana Fresca', price: 2000, qty: 10),

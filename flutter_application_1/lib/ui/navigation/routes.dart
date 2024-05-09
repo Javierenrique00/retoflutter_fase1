@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../modules/detail_screen/detail_screen.dart';
 import '../modules/form_screen/form_screen.dart';
 import '../modules/home_screen/home_screen.dart';
-import './navigation.dart';
+import 'navigation.dart';
 
 
 

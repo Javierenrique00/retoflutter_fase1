@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'data/datasource/local/local_product_datasource_impl.dart';
-import 'data/repository/product_repository_impl.dart';
-import 'domain/viewmodels/app_viewmodel.dart';
-import 'presentation/navigation/routes.dart';
+import 'infraestructure/api/local/local_api_impl.dart';
+import 'infraestructure/gateway/store_gateway_impl.dart';
+import 'domain/viewmodel/app_viewmodel.dart';
+import 'ui/navigation/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
         create: (context) => AppViewModel(
-            repository: ProductRepositoryImpl(
-                datasource: LocalProductDatasourceImpl())),
+            repository: StoreGatewayImpl(
+                datasource: LocalApiImpl())),
       child: const AppGlobalState(),
       );
   }

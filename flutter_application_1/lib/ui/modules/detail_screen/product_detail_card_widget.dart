@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../domain/models/product_model.dart';
-import '../../../domain/viewmodels/app_viewmodel.dart';
+import '../../../domain/model/product_model.dart';
+import '../../../domain/viewmodel/app_viewmodel.dart';
 import '../../navigation/navigation.dart';
 import '../common/utils.dart';
 import 'detail_item_widget.dart';

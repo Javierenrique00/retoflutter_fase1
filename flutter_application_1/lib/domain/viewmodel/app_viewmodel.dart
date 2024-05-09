@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../data/repository/product_repository.dart';
-import '../models/product_model.dart';
+import '../../infraestructure/gateway/store_gateway.dart';
+import '../model/product_model.dart';
 
 class AppViewModel extends ChangeNotifier {
 
   AppViewModel({required this.repository});
 
-  final ProductRepository repository;
+  final StoreGateway repository;
   final List<ProductModel> _products = [];
   
   void getAllProductsFromRepository(){
