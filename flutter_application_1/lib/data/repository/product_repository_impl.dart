@@ -1,6 +1,6 @@
 
 
-import '../../domain/models/product.dart';
+import '../../domain/models/product_model.dart';
 import '../datasource/local/local_product_datasource.dart';
 import 'product_repository.dart';
 
@@ -11,10 +11,10 @@ class ProductRepositoryImpl implements ProductRepository {
 
 
   @override
-  List<Product> getAllProducts() => datasource.getAllProducts();
+  List<ProductModel> getAllProducts() => datasource.getAllProducts();
 
   @override
-  Product? getProduct(int id) => datasource.getProduct(id);
+  ProductModel? getProduct(int id) => datasource.getProduct(id);
 
 
 

@@ -3,22 +3,20 @@ import 'package:flutter/services.dart';
 
 import 'input_type.dart';
 
-class EditFieldRow extends StatefulWidget {
+class EditFieldWidget extends StatefulWidget {
   final Function (String) onChanged;
 
-  const EditFieldRow({required this.name,required this.strValue,required this.type,required this.onChanged, super.key});
+  const EditFieldWidget({required this.name,required this.strValue,required this.type,required this.onChanged, super.key});
   final String name;
   final String strValue;
   final InputType type;
   
   @override
-  State<EditFieldRow> createState() => _EditFieldRowState();
+  State<EditFieldWidget> createState() => _EditFieldWidgetState();
 }
 
-class _EditFieldRowState extends State<EditFieldRow> {
-  _EditFieldRowState();
-
-
+class _EditFieldWidgetState extends State<EditFieldWidget> {
+  _EditFieldWidgetState();
 
   @override
   Widget build(BuildContext context) {

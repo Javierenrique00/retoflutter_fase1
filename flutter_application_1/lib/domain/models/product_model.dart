@@ -1,7 +1,7 @@
 
-class Product {
+class ProductModel {
 
-  Product({
+  ProductModel({
     required this.id,
     required this.name,
     required this.description,

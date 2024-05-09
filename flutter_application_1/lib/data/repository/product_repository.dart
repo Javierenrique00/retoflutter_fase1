@@ -1,9 +1,9 @@
 
-import '../../domain/models/product.dart';
+import '../../domain/models/product_model.dart';
 
 abstract class ProductRepository {
 
-  List<Product> getAllProducts();
-  Product? getProduct(int id);
+  List<ProductModel> getAllProducts();
+  ProductModel? getProduct(int id);
   
 }

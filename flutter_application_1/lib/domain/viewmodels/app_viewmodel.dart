@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../data/repository/product_repository.dart';
-import '../models/product.dart';
+import '../models/product_model.dart';
 
 class AppViewModel extends ChangeNotifier {
 
   AppViewModel({required this.repository});
 
   final ProductRepository repository;
-  final List<Product> _products = [];
+  final List<ProductModel> _products = [];
   
   void getAllProductsFromRepository(){
     _products.clear();
@@ -16,12 +16,12 @@ class AppViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Product> getProducts() => _products;
+  List<ProductModel> getProducts() => _products;
 
-  void setProduct(Product product){  
+  void setProduct(ProductModel product){  
     if(product.id == -1){
       final maxId = _products.fold<int>(0,(prev,item) =>(item.id>prev)?item.id:prev );
-      _products.add(Product(id: maxId + 1, name: product.name, description: product.description, price: product.price, qty: product.qty));
+      _products.add(ProductModel(id: maxId + 1, name: product.name, description: product.description, price: product.price, qty: product.qty));
       notifyListeners();
     }else{
       final indexFound = _products.indexWhere((element) => element.id == product.id);

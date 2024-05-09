@@ -5,14 +5,14 @@ import '../../navigation/navigation.dart';
 import '../common/utils.dart';
 import '../../../domain/viewmodels/app_viewmodel.dart';
 
-class ListProductsView extends StatefulWidget {
-  const ListProductsView({super.key});
+class ListProductsWidget extends StatefulWidget {
+  const ListProductsWidget({super.key});
 
   @override
-  State<ListProductsView> createState() => _ListProductsViewState();
+  State<ListProductsWidget> createState() => _ListProductsWidgetState();
 }
 
-class _ListProductsViewState extends State<ListProductsView> {
+class _ListProductsWidgetState extends State<ListProductsWidget> {
   var hasInit = false;
 
   @override
