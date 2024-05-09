@@ -50,7 +50,6 @@ La lógica de negocio se está aplicando en el AppViewModel que depende del Stor
 
 Validación en el formulario
 
-
 ## Versiones
 
 - Dart SDK version: 3.3.1 (stable)
